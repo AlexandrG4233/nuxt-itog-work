@@ -1,0 +1,44 @@
+.listing {
+  display: flex;
+  flex-direction: column;
+  .container;
+
+  &__events-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+
+    @media @bw1660 {
+      gap: 40px;
+    }
+
+    @media @bw1020 {
+      gap: 30px;
+    }
+
+    @media @bw650 {
+      justify-content: center;
+    }
+  }
+
+  &__event-card {
+    width: calc(33.333% - 40px);
+
+    @media @bw1660 {
+      width: calc(33.333% - 26.666px);
+    }
+
+    @media @bw1020 {
+      width: calc(50% - 15px);
+    }
+
+    @media @bw650 {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}

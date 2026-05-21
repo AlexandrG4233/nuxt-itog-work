@@ -1,0 +1,47 @@
+.arrow {
+  &--left {
+    rotate: 180deg;
+  }
+
+  &:hover {
+    @media (hover: hover) {
+      color: @red;
+    }
+  }
+
+  &--disabled {
+    pointer-events: none;
+    color: @gray;
+  }
+
+  &__icon {
+    @media @bw1020 {
+      width: 67px;
+      height: 40px;
+    }
+  }
+
+  &__events-icon {
+    rotate: 90deg;
+    max-width: 100%;
+    height: auto;
+    
+    @media @bw1020 {
+      width: 67px;
+      height: auto;
+    }
+    
+    @media @bw768 {
+      width: 55px;
+    }
+    
+    @media @bw600 {
+      width: 45px;
+    }
+    
+    @media @bw400 {
+      width: 35px;
+    }
+  }
+  
+}
