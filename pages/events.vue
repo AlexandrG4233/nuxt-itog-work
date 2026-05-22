@@ -1,6 +1,6 @@
 <template>
   <div class="events">
-    <EventsListing class="events__listing" />
+    <EventsListing :events="allEvents" class="events__listing" />
 
     <div class="events__table-container">
       <EventsTable class="events__tariffs-table" />
@@ -14,10 +14,16 @@
 </template>
 
 <script setup>
-import EventsListing from '../components/EventsListing.vue'
-import EventsTable from '../components/EventsTable.vue'
-import Offers from '../components/Offers.vue'
-import Info from '../components/Info.vue'
+import { useEventsStore } from '@/stores/events'
+import EventsListing from '@/components/EventsListing.vue'
+import EventsTable from '@/components/EventsTable.vue'
+import Offers from '@/components/Offers.vue'
+import Info from '@/components/Info.vue'
+
+const eventsStore = useEventsStore()
+await eventsStore.fetchEvents()
+
+const allEvents = computed(() => eventsStore.events)
 
 const openEventForm = () => {
   document.documentElement.classList.add('show-event-pp')

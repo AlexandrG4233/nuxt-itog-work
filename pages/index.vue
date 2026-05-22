@@ -14,20 +14,30 @@
     <Offers class="home__offers" @openForm="openEventForm" />
 
     <About />
-    <Upcoming class="home__upcoming" />
+
+    <Upcoming :events="upcomingEvents" class="home__upcoming" />
+
     <BlogListing class="home__listing" />
+
     <Contacts />
+
     <Doit />
   </div>
 </template>
 
 <script setup>
-import Offers from '../components/Offers.vue'
-import About from '../components/About.vue'
-import Upcoming from '../components/Upcoming.vue'
-import BlogListing from '../components/BlogListing.vue'
-import Contacts from '../components/Contacts.vue'
-import Doit from '../components/Doit.vue'
+import { useEventsStore } from '@/stores/events'
+import Offers from '@/components/Offers.vue'
+import About from '@/components/About.vue'
+import Upcoming from '@/components/Upcoming.vue'
+import BlogListing from '@/components/BlogListing.vue'
+import Contacts from '@/components/Contacts.vue'
+import Doit from '@/components/Doit.vue'
+
+const eventsStore = useEventsStore()
+await eventsStore.fetchEvents()
+
+const upcomingEvents = computed(() => eventsStore.getUpcomingEvents(6))
 
 const openEventForm = () => {
   document.documentElement.classList.add('show-event-pp')

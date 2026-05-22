@@ -1,45 +1,21 @@
 <template>
   <div class="event">
     <div class="event__container">
-      <EventPreview />
+      <EventPreview :event="event" />
       
       <div class="event__content content">
         <h5>Программа мероприятий</h5>
         
         <ul>
-          <li>20:15 — Приветствие гостей</li>
-          <li>20:30 — Первая подача блюд | Салаты</li>
-          <li>20:40 — Живой вокал | Композиции 1-3</li>
-          <li>21:20 — Подача горячих блюд</li>
-          <li>21:30 — Живой вокал | Композиции 4-7</li>
-          <li>22:15 — Подача десерта</li>
-          <li>22:30 — Живой вокал | Композиции 8-9</li>
-          <li>23:00 — Завершение вечера</li>
+          <li v-for="(item, index) in event.program" :key="index">{{ item }}</li>
         </ul>
 
         <h5>The Best Of Sade</h5>
 
-        <p>
-          Первый альбом-компиляция Sade, выпущенный в 1994 году. Он содержит 9 треков, включая самые популярные
-          хиты группы, раритеты и их любимые треки.
-        </p>
-
-        <p>
-          Группа продемонстрировала необычайное долголетие и креативность своей творческой карьеры.
-          Она лидировала музыкальных чартах с 1994 по 1995 год, став четырехкратно платиновой в США и продав
-          более 2 миллионов копий в Европе.
-        </p>
+        <p>{{ event.descriptionFull }}</p>
 
         <ol>
-          <li>Your Love Is King</li>
-          <li>Hang On To Your Love</li>
-          <li>Smooth Operator</li>
-          <li>Jezebel</li>
-          <li>The Sweetest Taboo</li>
-          <li>Is It A Crime</li>
-          <li>Never As Good As The First Time</li>
-          <li>Love Is Stronger Than Pride</li>
-          <li>Paradise</li>
+          <li v-for="(track, index) in event.tracklist" :key="index">{{ track }}</li>
         </ol>
       </div>
 
@@ -49,13 +25,20 @@
 </template>
 
 <script setup>
-import EventPreview from '../../components/EventPreview.vue'
-import Reserve from '../../components/Reserve.vue'
+import { useEventsStore } from '@/stores/events'
+import EventPreview from '@/components/EventPreview.vue'
+import Reserve from '@/components/Reserve.vue'
 
 const route = useRoute()
-const eventId = route.params.id
+const { id } = route.params
 
-onMounted(() => {
-  console.log('Event ID:', eventId)
-})
+const eventsStore = useEventsStore()
+const event = await eventsStore.fetchEventById(id)
+
+if (!event) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Мероприятие не найдено'
+  })
+}
 </script>

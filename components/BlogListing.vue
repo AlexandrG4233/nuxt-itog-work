@@ -1,5 +1,5 @@
 <template>
-  <section class="listing" :class="className">
+  <section id="blog" class="listing" :class="className">
     <h2 class="listing__title section-title">Блог</h2>
     <div class="listing__article-list">
       <ArticleCard

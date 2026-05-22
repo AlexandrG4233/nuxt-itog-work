@@ -1,8 +1,10 @@
 export default {
+  compatibilityDate: '2026-05-23',
+
   css: [
     './styles/styles.less'
   ],
-  
+
   app: {
     head: {
       title: 'Lenni Art',
@@ -18,7 +20,6 @@ export default {
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap' },
-        // Фавиконки
         { rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/favicon-16x16.png' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/favicon-32x32.png' },
@@ -33,7 +34,7 @@ export default {
       ]
     }
   },
-  
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -45,5 +46,7 @@ export default {
         }
       }
     }
-  }
+  },
+
+  modules: ['@pinia/nuxt']
 }

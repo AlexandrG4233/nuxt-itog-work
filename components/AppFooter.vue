@@ -24,7 +24,7 @@
           </div>
           <button type="submit" class="subscribe-form__submit">Подписаться</button>
         </div>
-        <label class="subscribe-form__check check">
+        <label class="subscribe-form__check">
           <input type="checkbox" name="agree" class="check__input" v-model="agreeChecked" required checked>
           <span class="check__mark check__mark--black"></span>
           <span class="check__label check__label--s">Согласен на обработку персональных данных</span>
@@ -34,22 +34,22 @@
     <div class="page-footer__block2">
       <div class="page-footer__socials socials">
         <a href="#" class="page-footer__social socials__link">
-          <img src="/icons/vk.svg" alt="VK" class="socials__icon" />
+          <img src="/icons/vk.svg" alt="VK" class="socials__icon" width="24" height="24" />
         </a>
         <a href="#" class="page-footer__social socials__link">
-          <img src="/icons/vk.svg" alt="VK" class="socials__icon" />
+          <img src="/icons/vk.svg" alt="VK" class="socials__icon" width="24" height="24" />
         </a>
       </div>
       <div class="page-footer__block2-links">
         <a href="#" class="page-footer__block2-link">Политика конфиденциальности</a>
         <a href="#" class="page-footer__block2-link">Cookies</a>
       </div>
-      <div class="page-footer__copyright">© Millennials 2026</div>
+      <div class="page-footer__copyright">© Millennials 2025</div>
       <div class="page-footer__create">
         Создание и продвижение
-        <div class="page-footer__create-link">
-          <img src="/icons/dignity.svg" alt="Dignity" class="page-footer__create-link-icon" />
-        </div>
+        <a href="#" class="page-footer__create-link">
+          <img src="/icons/dignity.svg" alt="Dignity" class="page-footer__create-link-icon" width="80" height="35.24" />
+        </a>
       </div>
     </div>
   </footer>

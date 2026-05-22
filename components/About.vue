@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div id="about" class="about">
     <div class="about__container">
       <h2 class="about__title section-title">О нас</h2>
       <div class="about__block">

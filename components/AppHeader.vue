@@ -1,12 +1,12 @@
 <template>
   <header class="page-header">
     <div class="page-header__container">
-      <a href="/" class="page-header__logo">
+      <NuxtLink to="/" class="page-header__logo">
         <img src="/icons/logo.svg" alt="Logo" class="page-header__logo-icon" />
-      </a>
+      </NuxtLink>
 
       <nav class="page-header__nav">
-        <a href="/events" class="page-header__nav-link">Мероприятия</a>
+        <NuxtLink to="/events" class="page-header__nav-link">Мероприятия</NuxtLink>
         <a href="#" class="page-header__nav-link">Блог</a>
         <a href="#" class="page-header__nav-link">О нас</a>
         <a href="#" class="page-header__nav-link">Контакты</a>
