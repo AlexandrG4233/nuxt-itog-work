@@ -6,14 +6,7 @@
         v-for="event in events"
         :key="event.id"
         class="listing__event-card"
-        :id="event.id"
-        :img="event.img"
-        :imgWebp="event.imgWebp"
-        :alt="event.alt"
-        :title="event.title"
-        :description="event.description"
-        :time="event.time"
-        :datetime="event.datetime"
+        :data="event"
       />
     </div>
     <NuxtLink to="/events" class="link__events link">

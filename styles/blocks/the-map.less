@@ -1,0 +1,48 @@
+.the-map {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+  filter: grayscale(100%);
+  
+  &:active {
+    cursor: grabbing;
+  }
+
+  .ol-zoom {
+    top: auto;
+    left: auto;
+    right: 20px;
+    bottom: 30px;
+  }
+
+  .ol-control button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid @red;
+    background-color: @red;
+    color: @white;
+    cursor: pointer;
+    outline: none;
+    
+    &:hover {
+      outline: none;
+      background-color: @dark_red;
+    }
+  }
+
+  .custom-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -100%);
+    
+    img {
+      display: block;
+      width: 78px;
+      height: 57px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+      pointer-events: none;
+    }
+  }
+}
