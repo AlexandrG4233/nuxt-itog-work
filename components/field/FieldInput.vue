@@ -63,17 +63,14 @@ const { errorMessage, value } = useField(props.name, props.rules, {
   width: 401px;
   max-width: 100%;
   
-  // С 1340px до 768px - ширина 289px
   @media (max-width: 1340px) and (min-width: 769px) {
     width: 289px;
   }
   
-  // С 768px до 320px - ширина 240px
   @media (max-width: 768px) {
     width: 240px;
   }
   
-  // При 471px и ниже - ширина 100%
   @media (max-width: 471px) {
     width: 100%;
   }
@@ -87,7 +84,7 @@ const { errorMessage, value } = useField(props.name, props.rules, {
   }
   
   &__required {
-    color: @red;
+    color: @black;
     margin-left: 2px;
   }
   

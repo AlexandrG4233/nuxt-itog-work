@@ -1,4 +1,3 @@
-<!-- components/ReserveScheme.vue -->
 <template>
   <div class="reserve__scheme">
     <div class="reserve__scheme-container">
@@ -11,14 +10,17 @@
           viewBox="0 0 780 399" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
-          @click="handleSvgClick"
         >
           <g class="scene__dance-floor">
             <path d="M462 82.5C462 121.436 430.436 153 391.5 153C352.564 153 321 121.436 321 82.5C321 43.5639 352.564 12 391.5 12C430.436 12 462 43.5639 462 82.5Z" fill="#1F1E1E" />
             <path d="M362.453 89H360.586V79.1797H357.227V77.5781H365.812V79.1797H362.453V89ZM372.781 89L372.414 87.7969H372.352C371.935 88.3229 371.516 88.6823 371.094 88.875C370.672 89.0625 370.13 89.1562 369.469 89.1562C368.62 89.1562 367.956 88.9271 367.477 88.4688C367.003 88.0104 366.766 87.362 366.766 86.5234C366.766 85.6328 367.096 84.9609 367.758 84.5078C368.419 84.0547 369.427 83.8073 370.781 83.7656L372.273 83.7188V83.2578C372.273 82.7057 372.143 82.2943 371.883 82.0234C371.628 81.7474 371.229 81.6094 370.688 81.6094C370.245 81.6094 369.82 81.6745 369.414 81.8047C369.008 81.9349 368.617 82.0885 368.242 82.2656L367.648 80.9531C368.117 80.7083 368.63 80.5234 369.188 80.3984C369.745 80.2682 370.271 80.2031 370.766 80.2031C371.865 80.2031 372.693 80.4427 373.25 80.9219C373.812 81.401 374.094 82.1536 374.094 83.1797V89H372.781ZM370.047 87.75C370.714 87.75 371.247 87.5651 371.648 87.1953C372.055 86.8203 372.258 86.2969 372.258 85.625V84.875L371.148 84.9219C370.284 84.9531 369.654 85.099 369.258 85.3594C368.867 85.6146 368.672 86.0078 368.672 86.5391C368.672 86.9245 368.786 87.224 369.016 87.4375C369.245 87.6458 369.589 87.75 370.047 87.75ZM378.492 80.3594V83.8281H382.562V80.3594H384.398V89H382.562V85.2734H378.492V89H376.656V80.3594H378.492ZM394.727 87.5781H395.977V92.0391H394.25V89H387.031V80.3594H388.867V87.5469H392.891V80.3594H394.727V87.5781ZM405.102 80.3594V89H403.258V81.8125H399.383V89H397.547V80.3594H405.102ZM415.398 84.6641C415.398 86.0755 415.036 87.1771 414.312 87.9688C413.589 88.7604 412.581 89.1562 411.289 89.1562C410.482 89.1562 409.768 88.974 409.148 88.6094C408.529 88.2448 408.052 87.7214 407.719 87.0391C407.385 86.3568 407.219 85.5651 407.219 84.6641C407.219 83.263 407.578 82.1693 408.297 81.3828C409.016 80.5964 410.029 80.2031 411.336 80.2031C412.586 80.2031 413.576 80.6068 414.305 81.4141C415.034 82.2161 415.398 83.2995 415.398 84.6641ZM409.109 84.6641C409.109 86.6589 409.846 87.6562 411.32 87.6562C412.779 87.6562 413.508 86.6589 413.508 84.6641C413.508 82.6901 412.773 81.7031 411.305 81.7031C410.534 81.7031 409.974 81.9583 409.625 82.4688C409.281 82.9792 409.109 83.7109 409.109 84.6641ZM424.617 89H422.766V81.7969H420.383C420.237 83.651 420.039 85.099 419.789 86.1406C419.544 87.1823 419.221 87.9427 418.82 88.4219C418.424 88.901 417.909 89.1406 417.273 89.1406C416.872 89.1406 416.536 89.0833 416.266 88.9688V87.5312C416.458 87.6042 416.651 87.6406 416.844 87.6406C417.375 87.6406 417.792 87.0443 418.094 85.8516C418.401 84.6536 418.641 82.8229 418.812 80.3594H424.617V89Z" fill="white" />
           </g>
 
-          <g class="scene__table scene__table--red" :class="{ 'selected': selectedTables.includes(1) }" @click.stop="toggleTable(1)">
+          <g 
+            class="scene__table scene__table--red" 
+            :class="{ 'selected': isSelected(1) }" 
+            @click.stop="toggleTable(1)"
+          >
             <g class="scene__table-group" stroke="none" fill="#BC3324">
               <rect x="507.5" y="35.5" width="83" height="28" />
               <circle cx="527" cy="20" r="11.5" />
@@ -31,7 +33,11 @@
             <rect x="507" y="8" width="111" height="83" fill="transparent" />
           </g>
 
-          <g class="scene__table" :class="{ 'selected': selectedTables.includes(2) }" @click.stop="toggleTable(2)">
+          <g 
+            class="scene__table" 
+            :class="{ 'selected': isSelected(2) }" 
+            @click.stop="toggleTable(2)"
+          >
             <g class="scene__table-group" stroke="#1F1E1E">
               <rect x="712.5" y="4.5" width="40" height="93" />
               <circle cx="697" cy="16" r="11.5" />
@@ -46,7 +52,11 @@
             <rect x="685" y="4" width="95" height="121" fill="transparent" />
           </g>
 
-          <g class="scene__table" :class="{ 'selected': selectedTables.includes(3) }" @click.stop="toggleTable(3)">
+          <g 
+            class="scene__table" 
+            :class="{ 'selected': isSelected(3) }" 
+            @click.stop="toggleTable(3)"
+          >
             <g class="scene__table-group" stroke="#1F1E1E">
               <rect x="712.5" y="185.5" width="40" height="93" />
               <circle cx="697" cy="197" r="11.5" />
@@ -61,7 +71,11 @@
             <rect x="685" y="185" width="95" height="121" fill="transparent" />
           </g>
 
-          <g class="scene__table scene__table--red" :class="{ 'selected': selectedTables.includes(4) }" @click.stop="toggleTable(4)">
+          <g 
+            class="scene__table scene__table--red" 
+            :class="{ 'selected': isSelected(4) }" 
+            @click.stop="toggleTable(4)"
+          >
             <g class="scene__table-group" stroke="#BC3324">
               <rect x="507.5" y="182.5" width="83" height="28" />
               <circle cx="527" cy="167" r="11.5" />
@@ -74,7 +88,11 @@
             <rect x="507" y="155" width="111" height="83" fill="transparent" />
           </g>
 
-          <g class="scene__table scene__table--disabled" :class="{ 'selected': selectedTables.includes(5) }" @click.stop="disabledTable(5)">
+          <g 
+            class="scene__table scene__table--disabled" 
+            :class="{ 'selected': isSelected(5) }" 
+            @click.stop="disabledTable(5)"
+          >
             <g class="scene__table-group" stroke="none" fill="#BFBFBF">
               <rect x="494.5" y="278.5" width="40" height="93" />
               <circle cx="479" cy="290" r="11.5" />
@@ -89,7 +107,11 @@
             <rect x="467" y="278" width="95" height="121" fill="transparent" />
           </g>
 
-          <g class="scene__table" :class="{ 'selected': selectedTables.includes(6) }" @click.stop="toggleTable(6)">
+          <g 
+            class="scene__table" 
+            :class="{ 'selected': isSelected(6) }" 
+            @click.stop="toggleTable(6)"
+          >
             <g class="scene__table-group" stroke="#1F1E1E">
               <rect x="273.5" y="278.5" width="40" height="93" />
               <circle cx="258" cy="290" r="11.5" />
@@ -104,7 +126,11 @@
             <rect x="246" y="278" width="95" height="121" fill="transparent" />
           </g>
 
-          <g class="scene__table scene__table--red" :class="{ 'selected': selectedTables.includes(7) }" @click.stop="toggleTable(7)">
+          <g 
+            class="scene__table scene__table--red" 
+            :class="{ 'selected': isSelected(7) }" 
+            @click.stop="toggleTable(7)"
+          >
             <g class="scene__table-group" stroke="none" fill="#BC3324">
               <rect x="320.5" y="183.5" width="83" height="28" />
               <circle cx="383" cy="227" r="11.5" />
@@ -116,7 +142,11 @@
             <rect x="293" y="183" width="138" height="56" fill="transparent" />
           </g>
 
-          <g class="scene__table scene__table--red" :class="{ 'selected': selectedTables.includes(8) }" @click.stop="toggleTable(8)">
+          <g 
+            class="scene__table scene__table--red" 
+            :class="{ 'selected': isSelected(8) }" 
+            @click.stop="toggleTable(8)"
+          >
             <g class="scene__table-group" stroke="#BC3324" fill="none">
               <rect x="187.5" y="169.5" width="61" height="36" />
               <circle cx="216" cy="221" r="11.5" transform="rotate(-180 216 221)" />
@@ -127,7 +157,11 @@
             <rect x="159" y="142" width="90" height="91" fill="transparent" />
           </g>
 
-          <g class="scene__table scene__table--red" :class="{ 'selected': selectedTables.includes(9) }" @click.stop="toggleTable(9)">
+          <g 
+            class="scene__table scene__table--red" 
+            :class="{ 'selected': isSelected(9) }" 
+            @click.stop="toggleTable(9)"
+          >
             <g class="scene__table-group" stroke="#BC3324">
               <rect x="222.5" y="27.5" width="61" height="36" />
               <circle cx="251" cy="79" r="11.5" transform="rotate(-180 251 79)" />
@@ -138,7 +172,11 @@
             <rect x="194" width="90" height="91" fill="transparent" />
           </g>
 
-          <g class="scene__table" :class="{ 'selected': selectedTables.includes(10) }" @click.stop="toggleTable(10)">
+          <g 
+            class="scene__table" 
+            :class="{ 'selected': isSelected(10) }" 
+            @click.stop="toggleTable(10)"
+          >
             <g class="scene__table-group" stroke="none" fill="#1F1E1E">
               <path d="M110.5 65V0.5H141.5V64.8261V92.5H15.5V65.5H110H110.5V65Z" />
               <circle cx="27" cy="50" r="11.5" />
@@ -150,7 +188,11 @@
             <rect x="15" width="127" height="93" fill="transparent" />
           </g>
 
-          <g class="scene__table" :class="{ 'selected': selectedTables.includes(11) }" @click.stop="toggleTable(11)">
+          <g 
+            class="scene__table" 
+            :class="{ 'selected': isSelected(11) }" 
+            @click.stop="toggleTable(11)"
+          >
             <g class="scene__table-group" stroke="#1F1E1E">
               <rect x="27.5" y="185.5" width="40" height="93" />
               <circle cx="12" cy="197" r="11.5" />
@@ -171,119 +213,87 @@
 </template>
 
 <script setup>
+const props = defineProps({
+  selectedTables: {
+    type: Array,
+    default: () => []
+  }
+})
+
+const emit = defineEmits(['update:selectedTables'])
+
 const tablePrices = {
-  1: { price: 1400, type: 'red', caption: 'Премиум' },
-  2: { price: 1250, type: 'black', caption: 'Стандарт' },
-  3: { price: 1250, type: 'black', caption: 'Стандарт' },
-  4: { price: 1400, type: 'red', caption: 'Премиум' },
+  1: { price: 1400, type: 'red', caption: 'Премиум', disabled: false },
+  2: { price: 1250, type: 'black', caption: 'Стандарт', disabled: false },
+  3: { price: 1250, type: 'black', caption: 'Стандарт', disabled: false },
+  4: { price: 1400, type: 'red', caption: 'Премиум', disabled: false },
   5: { price: 0, type: 'disabled', caption: 'Забронирован', disabled: true },
-  6: { price: 1250, type: 'black', caption: 'Стандарт' },
-  7: { price: 1400, type: 'red', caption: 'Премиум' },
-  8: { price: 1400, type: 'red', caption: 'Премиум' },
-  9: { price: 1400, type: 'red', caption: 'Премиум' },
-  10: { price: 1250, type: 'black', caption: 'Стандарт' },
-  11: { price: 1250, type: 'black', caption: 'Стандарт' }
+  6: { price: 1250, type: 'black', caption: 'Стандарт', disabled: false },
+  7: { price: 1400, type: 'red', caption: 'Премиум', disabled: false },
+  8: { price: 1400, type: 'red', caption: 'Премиум', disabled: false },
+  9: { price: 1400, type: 'red', caption: 'Премиум', disabled: false },
+  10: { price: 1250, type: 'black', caption: 'Стандарт', disabled: false },
+  11: { price: 1250, type: 'black', caption: 'Стандарт', disabled: false }
 }
 
-const selectedTables = ref([])
+const isSelected = (tableNumber) => {
+  return props.selectedTables.includes(tableNumber)
+}
 
 const toggleTable = (tableNumber) => {
   const table = tablePrices[tableNumber]
-  
-  if (table.disabled) return
-  
-  const index = selectedTables.value.indexOf(tableNumber)
-  if (index === -1) {
-    selectedTables.value.push(tableNumber)
-  } else {
-    selectedTables.value.splice(index, 1)
+  if (table.disabled) {
+    alert(`Стол ${tableNumber} уже забронирован. Пожалуйста, выберите другой стол.`)
+    return
   }
   
-  emit('update:selectedTables', selectedTables.value)
-  calculateAndEmitOrder()
+  const currentSelected = [...props.selectedTables]
+  const index = currentSelected.indexOf(tableNumber)
+  
+  if (index === -1) {
+    currentSelected.push(tableNumber)
+  } else {
+    currentSelected.splice(index, 1)
+  }
+  
+  emit('update:selectedTables', currentSelected)
 }
 
 const disabledTable = (tableNumber) => {
   alert(`Стол ${tableNumber} уже забронирован. Пожалуйста, выберите другой стол.`)
 }
+</script>
 
-const calculateAndEmitOrder = () => {
-  let redCount = 0
-  let blackCount = 0
-  let redTotal = 0
-  let blackTotal = 0
+<style lang="less">
+.scene__table {
+  cursor: pointer;
+  transition: filter 0.2s;
   
-  selectedTables.value.forEach(tableNum => {
-    const table = tablePrices[tableNum]
-    if (table.type === 'red') {
-      redCount++
-      redTotal += table.price
-    } else if (table.type === 'black') {
-      blackCount++
-      blackTotal += table.price
-    }
-  })
-  
-  const orderTickets = []
-  
-  if (redCount > 0) {
-    orderTickets.push({
-      type: 'red',
-      quantity: redCount,
-      price: `${tablePrices[1]?.price || 1400}₽`,
-      caption: 'Премиум билет',
-      total: redTotal.toLocaleString(),
-      currency: '₽'
-    })
-  }
-  
-  if (blackCount > 0) {
-    orderTickets.push({
-      type: 'black',
-      quantity: blackCount,
-      price: `${tablePrices[2]?.price || 1250}₽`,
-      caption: 'Стандарт билет',
-      total: blackTotal.toLocaleString(),
-      currency: '₽'
-    })
-  }
-  
-  const totalSum = (redTotal + blackTotal).toLocaleString()
-  
-  emit('update:order', { tickets: orderTickets, totalSum })
-}
-
-const emit = defineEmits(['update:selectedTables', 'update:order'])
-
-const style = document.createElement('style')
-style.textContent = `
-  .scene__table {
-    cursor: pointer;
-    transition: filter 0.2s;
-  }
-  .scene__table:hover:not(.scene__table--disabled) {
+  &:hover:not(.scene__table--disabled) {
     filter: brightness(0.9);
     cursor: pointer;
   }
-  .scene__table.selected .scene__table-group rect,
-  .scene__table.selected .scene__table-group circle,
-  .scene__table.selected .scene__table-group path:not(.scene__table-num) {
-    stroke: #FFD700 !important;
-    stroke-width: 3px !important;
+  
+  &.selected {
+    .scene__table-group rect,
+    .scene__table-group circle,
+    .scene__table-group path:not(.scene__table-num) {
+      stroke: #FFD700 !important;
+      stroke-width: 3px !important;
+    }
+    
+    .scene__table-group[fill="#BC3324"] {
+      filter: brightness(1.1);
+    }
   }
-  .scene__table.selected .scene__table-group[fill="#BC3324"] {
-    filter: brightness(1.1);
-  }
-  .scene__table.scene__table--red.selected .scene__table-group rect {
-    stroke: #FFD700 !important;
-  }
-  .scene__table--disabled {
+  
+  &.scene__table--disabled {
     cursor: not-allowed;
     opacity: 0.6;
+    
+    &:hover {
+      filter: none;
+    }
   }
-  .scene__table--disabled:hover {
-    filter: none;
-  }
-`
-document.head.appendChild(style)
-</script>
+}
+</style>

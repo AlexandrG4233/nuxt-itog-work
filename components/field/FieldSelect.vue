@@ -94,17 +94,14 @@ const onSelect = (option) => {
     border-radius: 5px !important;
     background: @white;
     
-    // С 1340px до 768px - ширина 289px
     @media (max-width: 1340px) and (min-width: 769px) {
       width: 289px;
     }
     
-    // С 768px до 320px - ширина 240px
     @media (max-width: 768px) {
       width: 240px;
     }
     
-    // При 471px и ниже - ширина 100%
     @media (max-width: 471px) {
       width: 100%;
       min-height: 50px;

@@ -140,17 +140,14 @@ onBeforeUnmount(() => {
   width: 100%;
   max-width: 401px;
   
-  // С 1340px до 768px - ширина 289px
   @media (max-width: 1340px) and (min-width: 769px) {
     max-width: 289px;
   }
   
-  // С 768px до 320px - ширина 240px
   @media (max-width: 768px) {
     max-width: 240px;
   }
   
-  // При 471px и ниже - ширина 100%
   @media (max-width: 471px) {
     max-width: 100%;
   }
