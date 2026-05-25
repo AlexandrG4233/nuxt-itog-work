@@ -20,18 +20,8 @@ export default defineEventHandler(() => {
           '22:30 — Живой вокал | Композиции 8-9',
           '23:00 — Завершение вечера'
         ],
-        descriptionFull: 'Первый альбом-компиляция Sade, выпущенный в 1994 году. Он содержит 9 треков, включая самые популярные хиты группы, раритеты и их любимые треки. Группа продемонстрировала необычайное долголетие и креативность своей творческой карьеры. Она лидировала музыкальных чартах с 1994 по 1995 год, став четырехкратно платиновой в США и продав более 2 миллионов копий в Европе.',
-        tracklist: [
-          'Your Love Is King',
-          'Hang On To Your Love',
-          'Smooth Operator',
-          'Jezebel',
-          'The Sweetest Taboo',
-          'Is It A Crime',
-          'Never As Good As The First Time',
-          'Love Is Stronger Than Pride',
-          'Paradise'
-        ]
+        descriptionFull: 'Первый альбом-компиляция Sade, выпущенный в 1994 году...',
+        tracklist: []
       },
       {
         id: 2,
@@ -39,16 +29,11 @@ export default defineEventHandler(() => {
         imgWebp: '/images/events/HowStuffWorks.webp',
         alt: 'howstuffworks',
         title: 'Есть тема, нужно обсудить с HowStuffWorks',
-        description: 'Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.',
+        description: 'Один из самых популярных подкастов в мире...',
         time: '14.12.2024 | начало 17.20',
         datetime: '2024-12-14T17:20',
-        program: [
-          '17:20 — Открытие',
-          '17:30 — Презентация подкаста',
-          '18:00 — Дискуссия',
-          '19:00 — Вопросы и ответы'
-        ],
-        descriptionFull: 'HowStuffWorks — один из самых популярных подкастов в мире. Авторы объясняют, как устроены разные вещи.',
+        program: [],
+        descriptionFull: '',
         tracklist: []
       },
       {
@@ -57,68 +42,50 @@ export default defineEventHandler(() => {
         imgWebp: '/images/events/Sade.webp',
         alt: 'Sade',
         title: 'Вечер | The Best of Sade',
-        description: 'Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.',
+        description: 'Музыка группы имеет эклектичный характер...',
         time: '16.12.2024 | начало 20.00',
         datetime: '2024-12-16T20:00',
-        program: [
-          '20:00 — Начало вечера',
-          '20:30 — Подача блюд',
-          '21:00 — Живая музыка',
-          '22:00 — Фуршет'
-        ],
-        descriptionFull: 'Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.',
+        program: [],
+        descriptionFull: '',
         tracklist: []
       },
       {
         id: 4,
-        img: '/images/events/выставка Малевича.jpg',
-        imgWebp: '/images/events/выставка Малевича.webp',
+        img: '/images/events/malevich-exhibition.jpg',
+        imgWebp: '/images/events/malevich-exhibition.webp',
         alt: 'выставка',
         title: 'Выставка Малевича в Томске',
-        description: 'Это будет самая полная выставка с 1988 года, того времени, когда впервые заговорили о Малевиче. Экспозиция займёт два этажа павильона.',
+        description: 'Это будет самая полная выставка с 1988 года...',
         time: '23.12.2024 | начало 20.00',
         datetime: '2024-12-23T20:00',
-        program: [
-          '20:00 — Открытие выставки',
-          '20:30 — Экскурсия',
-          '21:30 — Лекция'
-        ],
-        descriptionFull: 'Это будет самая полная выставка с 1988 года, того времени, когда впервые заговорили о Малевиче.',
+        program: [],
+        descriptionFull: '',
         tracklist: []
       },
       {
         id: 5,
-        img: '/images/events/арт-съемка для Tatler.jpg',
-        imgWebp: '/images/events/арт-съемка для Tatler.webp',
+        img: '/images/events/tatler-photoshoot.jpg',
+        imgWebp: '/images/events/tatler-photoshoot.webp',
         alt: 'Tatler',
         title: 'Мастер — класс по студийной съемке от Tatler',
-        description: 'Фотографы издания расскажут, как им удается создавать потрясающие кадры и что может испортить весь процесс.',
+        description: 'Фотографы издания расскажут...',
         time: '25.12.2024 | начало 13.00',
         datetime: '2024-12-25T13:00',
-        program: [
-          '13:00 — Приветствие',
-          '13:30 — Теория',
-          '15:00 — Практика',
-          '17:00 — Разбор работ'
-        ],
-        descriptionFull: 'Фотографы издания расскажут, как им удается создавать потрясающие кадры.',
+        program: [],
+        descriptionFull: '',
         tracklist: []
       },
       {
         id: 6,
-        img: '/images/events/the hatters.jpg',
-        imgWebp: '/images/events/the hatters.webp',
+        img: '/images/events/the-hatters.jpg',
+        imgWebp: '/images/events/the-hatters.webp',
         alt: 'Hatters',
         title: 'Повеселимся на славу на концерте The Hatters',
-        description: 'Российская джипси-фолк-рок группа, основанная в 2016 году в Санкт-Петербурге.',
+        description: 'Российская джипси-фолк-рок группа...',
         time: '27.12.2024 | начало 10.00',
         datetime: '2024-12-27T10:00',
-        program: [
-          '10:00 — Саундчек',
-          '11:00 — Концерт',
-          '13:00 — Автограф-сессия'
-        ],
-        descriptionFull: 'Российская джипси-фолк-рок группа, основанная в 2016 году в Санкт-Петербурге.',
+        program: [],
+        descriptionFull: '',
         tracklist: []
       }
     ]

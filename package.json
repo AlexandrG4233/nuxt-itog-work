@@ -10,16 +10,21 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@vee-validate/i18n": "^4.15.1",
+    "@vee-validate/rules": "^4.15.1",
     "@vueuse/core": "^14.3.0",
     "air-datepicker": "^3.6.0",
     "jquery": "^3.7.1",
     "jquery-mask-plugin": "^1.14.16",
     "jquery-validation": "^1.19.5",
+    "maska": "^3.2.0",
     "ol": "^10.9.0",
     "ol-contextmenu": "^6.0.0",
     "ol-ext": "^4.0.38",
     "swiper": "^11.2.1",
+    "vee-validate": "^4.15.1",
     "vue": "^3.4.0",
+    "vue-multiselect": "^3.5.0",
     "vue-router": "^4.3.0",
     "vue3-openlayers": "^12.2.2"
   },

@@ -7,18 +7,41 @@
     margin-bottom: 0;
   }
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
+  &__fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
   }
 
-  &__input,
-  &__textarea {
+  &__title {
+    display: block;
+    margin: 0 0 10px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.3;
+    color: @black;
+  }
+
+  &__input-label {
+    display: block;
+    width: 100%;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    color: @black;
+  }
+
+  &__input {
     box-sizing: border-box;
     display: block;
     width: 100%;
+    height: 55px;
+    padding: 17px 20px 16px;
     border: 1px solid @gray;
     border-radius: 5px;
     background-color: @white;
@@ -32,39 +55,31 @@
       outline: none;
     }
 
-    &::placeholder {
-      color: @gray;
-      font-weight: 300;
+    &--error {
+      border-color: @red !important;
+      background-color: rgba(188, 51, 36, 0.05);
     }
   }
 
-  &__input {
-    height: 55px;
-    padding: 17px 20px 16px;
-  }
-
   &__textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
     height: 150px;
     padding: 20px;
-    resize: vertical;
-  }
-
-  &__title {
-    display: block;
-    margin: 0 0 10px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.3;
-    color: @black;
-    transition: color 0.2s;
-  }
-
-  &__label {
+    border: 1px solid @gray;
+    border-radius: 5px;
+    background-color: @white;
     font-weight: 400;
     font-size: 16px;
-    line-height: 1.3;
-    color: @black;
-    transition: color 0.2s;
+    line-height: 1.375;
+    resize: vertical;
+    transition: border-color 0.2s;
+
+    &:focus {
+      border-color: @black;
+      outline: none;
+    }
   }
 
   &__select {
@@ -72,7 +87,6 @@
     display: block;
     width: 100%;
     height: 55px;
-    padding: 0 20px;
     border: 1px solid @gray;
     border-radius: 5px;
     background-color: @white;
@@ -85,37 +99,6 @@
     &:focus {
       border-color: @black;
       outline: none;
-    }
-  }
-
-  &__date-inputs {
-    display: flex;
-    gap: 15px;
-    width: 100%;
-  }
-
-  &__date-input {
-    box-sizing: border-box;
-    display: block;
-    width: 55px;
-    height: 55px;
-    border: 1px solid @gray;
-    border-radius: 5px;
-    background-color: @white;
-    padding: 17px 13px 16px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.375;
-    text-align: center;
-    transition: border-color 0.2s;
-
-    &:focus {
-      border-color: @black;
-      outline: none;
-    }
-
-    &--year {
-      width: 110px;
     }
   }
 
@@ -138,6 +121,30 @@
     pointer-events: none;
   }
 
+  &__date-input {
+    box-sizing: border-box;
+    display: block;
+    width: 55px;
+    height: 55px;
+    border: 1px solid @gray;
+    border-radius: 5px;
+    background-color: @white;
+    padding: 17px 13px 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.375;
+    text-align: center;
+
+    &--year {
+      width: 110px;
+    }
+
+    &:focus {
+      border-color: @black;
+      outline: none;
+    }
+  }
+
   &__date-picker {
     box-sizing: border-box;
     position: relative;
@@ -152,90 +159,33 @@
 
   &__error {
     display: none;
-    font-size: 16px;
+    margin-top: 5px;
+    font-size: 12px;
     color: @red;
     line-height: 1.3;
+
+    &--visible {
+      display: block;
+    }
   }
 
+  // Стили для ошибок
   &--error {
+    .field__title,
     .field__label {
       color: @red;
     }
-    
+
     .field__error {
       display: block;
     }
   }
 }
 
-.check {
-  display: flex;
-  flex-direction: row;
-  margin-top: 10px;
-  
-  &__label-wrapper {
-    display: inline-flex;
-    align-items: flex-start;
-    cursor: pointer;
-  }
-  
-  &__input {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    
-    &:checked + .check__mark {
-      background-color: @black;
-      
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 7px;
-        top: 2px;
-        width: 6px;
-        height: 12px;
-        border-bottom: 2px solid @white;
-        border-right: 2px solid @white;
-        transform: rotate(45deg);
-      }
-    }
-  }
-  
-  &__mark {
-    position: relative;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-    margin-right: 10px;
-    border: 1px solid @black;
-    background-color: transparent;
-    transition: background-color 0.2s;
-  }
-  
-  &__label {
-    font-size: 14px;
-    line-height: 1.3;
-    color: @black;
-    transition: color 0.2s;
-  }
-  
-  &--error {
-    .check__label {
-      color: @red;
-    }
-    
-    .check__mark {
-      border-color: @red;
-    }
-    
-    .field__error {
-      display: block;
-      margin-top: 5px;
-      font-size: 14px;
-      color: @red;
-    }
-  }
+.field-error {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: @red;
+  line-height: 1.3;
 }
