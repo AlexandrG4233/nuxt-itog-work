@@ -30,7 +30,7 @@
       <div class="page-footer__create">
         Создание и продвижение
         <a href="#" class="page-footer__create-link">
-          <img src="/icons/dignity.svg" alt="Dignity" class="page-footer__create-link-icon" width="80" height="35.24" />
+          <img src="/icons/dignity.svg" alt="Dignity" class="page-footer__create-link-icon" width="80" height="35" />
         </a>
       </div>
     </div>

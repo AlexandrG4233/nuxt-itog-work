@@ -24,11 +24,10 @@
 
     <label class="subscribe-form__check check">
       <input
-        v-model="agreement"
-        :true-value="1"
-        :false-value="0"
         type="checkbox"
         class="check__input"
+        :checked="agreement === 1"
+        @change="agreement = $event.target.checked ? 1 : 0"
         required
       />
       <span class="check__mark check__mark--black"></span>
@@ -74,6 +73,7 @@ const onSubmit = () => {
   &__error {
     display: block;
     margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 12px;
     color: @red;
     line-height: 1.3;

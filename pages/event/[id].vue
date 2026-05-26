@@ -1,16 +1,19 @@
 <template>
   <div class="event">
     <div class="event__container">
+      <h1 class="visually-hidden">{{ event.title }}</h1>
       <EventPreview :event="event" />
       
       <div class="event__content content">
-        <h5>Программа мероприятий</h5>
+        <h2 class="visually-hidden">Детали мероприятия</h2>
+        <h3 class="visually-hidden">Информация</h3>
+        <h4>Программа мероприятий</h4>
         
         <ul>
           <li v-for="(item, index) in event.program" :key="index">{{ item }}</li>
         </ul>
 
-        <h5>The Best Of Sade</h5>
+        <h4>The Best Of Sade</h4>
 
         <p>{{ event.descriptionFull }}</p>
 
@@ -42,3 +45,17 @@ if (!event) {
   })
 }
 </script>
+
+<style scoped>
+.visually-hidden {
+  position: absolute;
+  width:  0px;
+  height: 0px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}
+</style>

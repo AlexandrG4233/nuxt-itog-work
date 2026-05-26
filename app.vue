@@ -13,4 +13,10 @@
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
 import EventPP from './components/EventPP.vue'
+
+useHead({
+  htmlAttrs: {
+    lang: 'ru'
+  }
+})
 </script>

@@ -10,7 +10,7 @@ export default {
       title: 'Lenni Art',
       meta: [
         { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: 'Арт-пространство для людей, горящих сердцем и делом' },
         { name: 'theme-color', content: '#dedede' },
         { name: 'msapplication-TileColor', content: '#dedede' },
