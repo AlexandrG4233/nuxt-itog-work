@@ -65,7 +65,7 @@
         <FieldInput
           name="phone"
           label="Телефон"
-          placeholder="+7 (###) ###-##-##"
+          placeholder="+7 (___) ___ __ __"
           :rules="{ required: true, phone: true }"
           mask="+7 (###) ###-##-##"
           :submitCount="submitCount"
